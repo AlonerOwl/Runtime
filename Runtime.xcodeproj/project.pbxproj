@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		848BAAAE229C3102002F799B /* UITableView+ObjcDefaultDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BAAAD229C3102002F799B /* UITableView+ObjcDefaultDisplay.m */; };
 		84ED4BD1229A8D58002E4E33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED4BD0229A8D58002E4E33 /* AppDelegate.m */; };
 		84ED4BD4229A8D58002E4E33 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED4BD3229A8D58002E4E33 /* ViewController.m */; };
 		84ED4BD7229A8D58002E4E33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ED4BD5229A8D58002E4E33 /* Main.storyboard */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		848BAAAC229C3102002F799B /* UITableView+ObjcDefaultDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+ObjcDefaultDisplay.h"; sourceTree = "<group>"; };
+		848BAAAD229C3102002F799B /* UITableView+ObjcDefaultDisplay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ObjcDefaultDisplay.m"; sourceTree = "<group>"; };
 		84ED4BCC229A8D58002E4E33 /* Runtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ED4BCF229A8D58002E4E33 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		84ED4BD0229A8D58002E4E33 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		848BAAAB229C2C93002F799B /* MethodSwizzling */ = {
+			isa = PBXGroup;
+			children = (
+				848BAAAC229C3102002F799B /* UITableView+ObjcDefaultDisplay.h */,
+				848BAAAD229C3102002F799B /* UITableView+ObjcDefaultDisplay.m */,
+			);
+			path = MethodSwizzling;
+			sourceTree = "<group>";
+		};
 		84ED4BC3229A8D58002E4E33 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +76,7 @@
 		84ED4BCE229A8D58002E4E33 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				848BAAAB229C2C93002F799B /* MethodSwizzling */,
 				84ED4BE5229A8D6C002E4E33 /* MessageSend */,
 				84ED4BCF229A8D58002E4E33 /* AppDelegate.h */,
 				84ED4BD0229A8D58002E4E33 /* AppDelegate.m */,
@@ -163,6 +176,7 @@
 				84ED4BDF229A8D58002E4E33 /* main.m in Sources */,
 				84ED4BE8229A8D7F002E4E33 /* Person.m in Sources */,
 				84ED4BD1229A8D58002E4E33 /* AppDelegate.m in Sources */,
+				848BAAAE229C3102002F799B /* UITableView+ObjcDefaultDisplay.m in Sources */,
 				84ED4BEB229A93A6002E4E33 /* SpareWheel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
