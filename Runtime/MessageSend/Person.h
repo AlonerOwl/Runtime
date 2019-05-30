@@ -12,6 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
 
+@property (nonatomic,   copy) NSString * name;
+
+- (instancetype)initWithDict:(NSDictionary *)dict;
+- (NSDictionary *)convertModelToDict;
+
 - (void)sendMessage:(NSString *)msg;
 
 @end
