@@ -8,12 +8,18 @@
 
 #import "ViewController.h"
 #import "Person.h"
+#import "NewPerson.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSArray * dataArray;
 
+@property (nonatomic, strong) Person *p1;
+@property (nonatomic, strong) Person *p2;
+
+@property (nonatomic, strong) NewPerson *np1;
+@property (nonatomic, strong) NewPerson *np2;
 
 @end
 
@@ -37,7 +43,35 @@
     
 //    [self sendMessage];
     
-    [self methodExchange];
+//    [self methodExchange];
+    
+//    [self systemKVO];
+}
+
+- (void)customKVO {
+    _np1 = [NewPerson new];
+    _np2 = [NewPerson new];
+    
+    _np2.name = @"Kody";
+    NSLog(@"监听之前---p1:%p, p2:%p", [_np1 methodForSelector:@selector(setName:)], [_np2 methodForSelector:@selector(setName:)]);
+    [_np1 zf_addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    _np1.name = @"Tom";
+    NSLog(@"监听之后---p1:%p, p2:%p", [_np1 methodForSelector:@selector(setName:)], [_np2 methodForSelector:@selector(setName:)]);
+}
+
+- (void)systemKVO {
+    _p1 = [Person new];
+    _p2 = [Person new];
+    
+    _p2.name = @"Kody";
+    NSLog(@"监听之前---p1:%p, p2:%p", [_p1 methodForSelector:@selector(setName:)], [_p2 methodForSelector:@selector(setName:)]);
+    [_p1 addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+    _p1.name = @"Tom";
+    NSLog(@"监听之后---p1:%p, p2:%p", [_p1 methodForSelector:@selector(setName:)], [_p2 methodForSelector:@selector(setName:)]);
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"change == %@", change);
 }
 
 - (void)sendMessage {
