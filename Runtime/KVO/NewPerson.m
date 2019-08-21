@@ -37,11 +37,13 @@ NSString *getValueKey(NSString *setter) {
 
 - (void)zf_addObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath options:(NSKeyValueObservingOptions)options context:(void *)context {
     
-    // 创建一个类
+    // 获取当前类的名字
     NSString *oldName = NSStringFromClass([self class]);
+    // 构建新类是名字
     NSString *newName = [NSString stringWithFormat:@"CustomKVO_%@", oldName];
-    
+    // 新建一个类，这个类是当前类的子类
     Class customClass = objc_allocateClassPair([self class], newName.UTF8String, 0);
+    // 注册该类
     objc_registerClassPair(customClass);
     
     // 修改 isa 指针

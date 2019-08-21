@@ -41,12 +41,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    // 消息发送机制
 //    [self sendMessage];
-    
+    // 方法替换，将tableView的reload方法替换为自己的实现
 //    [self methodExchange];
-    
+    // 系统KVO解析
 //    [self systemKVO];
+    // 自定义KVO
+    [self customKVO];
 }
+
+#pragma mark - KVO
 
 - (void)customKVO {
     _np1 = [NewPerson new];
@@ -74,16 +79,20 @@
     NSLog(@"change == %@", change);
 }
 
-- (void)sendMessage {
-    // 消息发送机制方法调用
-    [[Person new] sendMessage:@"hello"];
-}
+#pragma mark - 方法替换
 
 - (void)methodExchange {
-//    _dataArray = @[@"hello1", @"hello2", @"hello3", @"hello4", @"hello5"];
+    //    _dataArray = @[@"hello1", @"hello2", @"hello3", @"hello4", @"hello5"];
     _dataArray = @[];
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
+}
+
+#pragma mark - 消息发送机制
+
+- (void)sendMessage {
+    // 消息发送机制方法调用
+    [[Person new] sendMessage:@"hello"];
 }
 
 #pragma mark - UITableViewDelegate, UITableViewDataSource
