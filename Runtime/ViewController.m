@@ -9,8 +9,9 @@
 #import "ViewController.h"
 #import "Person.h"
 #import "NewPerson.h"
+#import "AssociatedManager.h"
 
-@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate>
 
 @property (nonatomic, strong) UITableView * tableView;
 @property (nonatomic, strong) NSArray * dataArray;
@@ -48,7 +49,18 @@
     // 系统KVO解析
 //    [self systemKVO];
     // 自定义KVO
-    [self customKVO];
+//    [self customKVO];
+    // 关联对象
+    [self showAlert];
+}
+
+- (void)showAlert {
+    [AssociatedManager showAlert:self];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    void (^block)(NSInteger) = objc_getAssociatedObject(alertView, ZFAlertDelegateBlock);
+    block(buttonIndex);
 }
 
 #pragma mark - KVO

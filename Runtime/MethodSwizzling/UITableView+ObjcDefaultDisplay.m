@@ -21,7 +21,7 @@ static char ZFDefualtView;
 }
 
 - (void)zf_reloadData {
-    [self zf_reloadData];
+    [self zf_reloadData]; // 由于方法以及替换，[self zf_reloadData]就是为调用系统的方法
     [self fillDefualtView];
 }
 

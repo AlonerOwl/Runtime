@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67833BA9232FB15B0015EED6 /* AssociatedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 67833BA8232FB15B0015EED6 /* AssociatedManager.m */; };
 		67FA190D22B144FD0051771C /* NewPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 67FA190C22B144FD0051771C /* NewPerson.m */; };
 		848BAAAE229C3102002F799B /* UITableView+ObjcDefaultDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 848BAAAD229C3102002F799B /* UITableView+ObjcDefaultDisplay.m */; };
 		84ED4BD1229A8D58002E4E33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84ED4BD0229A8D58002E4E33 /* AppDelegate.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67833BA7232FB15B0015EED6 /* AssociatedManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AssociatedManager.h; sourceTree = "<group>"; };
+		67833BA8232FB15B0015EED6 /* AssociatedManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssociatedManager.m; sourceTree = "<group>"; };
 		67FA190B22B144FD0051771C /* NewPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewPerson.h; sourceTree = "<group>"; };
 		67FA190C22B144FD0051771C /* NewPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewPerson.m; sourceTree = "<group>"; };
 		848BAAAC229C3102002F799B /* UITableView+ObjcDefaultDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+ObjcDefaultDisplay.h"; sourceTree = "<group>"; };
@@ -60,6 +63,15 @@
 			path = KVO;
 			sourceTree = "<group>";
 		};
+		67833BA6232FB0130015EED6 /* AssociatedObject */ = {
+			isa = PBXGroup;
+			children = (
+				67833BA7232FB15B0015EED6 /* AssociatedManager.h */,
+				67833BA8232FB15B0015EED6 /* AssociatedManager.m */,
+			);
+			path = AssociatedObject;
+			sourceTree = "<group>";
+		};
 		848BAAAB229C2C93002F799B /* MethodSwizzling */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		84ED4BCE229A8D58002E4E33 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
+				67833BA6232FB0130015EED6 /* AssociatedObject */,
 				67616F7E22A8023200C28EF1 /* KVO */,
 				848BAAAB229C2C93002F799B /* MethodSwizzling */,
 				84ED4BE5229A8D6C002E4E33 /* MessageSend */,
@@ -186,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84ED4BD4229A8D58002E4E33 /* ViewController.m in Sources */,
+				67833BA9232FB15B0015EED6 /* AssociatedManager.m in Sources */,
 				84ED4BDF229A8D58002E4E33 /* main.m in Sources */,
 				84ED4BE8229A8D7F002E4E33 /* Person.m in Sources */,
 				84ED4BD1229A8D58002E4E33 /* AppDelegate.m in Sources */,
